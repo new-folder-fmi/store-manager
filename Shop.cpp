@@ -1,7 +1,10 @@
-class Game
+class Shop
 {
     private:
+
+
 
     public:
 
 };
+
