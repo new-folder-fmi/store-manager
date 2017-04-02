@@ -7,7 +7,7 @@ class Shop
     private:
 
     std::string name;
-    int budget;
+    float budget;
     //productDB
     //clientDB
     //receiptDB

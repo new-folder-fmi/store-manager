@@ -1,17 +1,17 @@
 #include "Shop.h"
 #include <iostream>
-void Shop::setName()
+void Shop::setName(string _name)
 {
-    std::cin >> this->name;
+    this->name = _name;
 }
 std::string Shop::getName()
 {
     return this->name;
 }
 
-void Shop::setBudget()
+void Shop::setBudget(float _budget)
 {
-    std::cin >> this->budget;
+    this->budget = _budget;
 }
 
 float Shop::getBudget()
@@ -57,9 +57,7 @@ void Shop::sellByOffer(std::string productName , short int amount)
     sellByBill(productName , amount /* Client */ );
 }
 
-int main ()
+void Shop::restockOrder()
 {
-    Shop shop1;
-    shop1.setName();
-    std::cout<<shop1.getName();
+
 }
