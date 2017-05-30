@@ -1,5 +1,5 @@
 #include "expiryDate.h"
-#include <iostream>
+
 ExpiryDate::ExpiryDate():year(0), month(0), day(0)
 {
 }
@@ -82,11 +82,4 @@ bool ExpiryDate::isExpired(ExpiryDate const& currentDate)
     }
 
 }
-int main()
-{
-    ExpiryDate date1;
-    std::cout<<date1.getYear();
-    date1.setYear(1234);
-    std::cout<<date1.getYear();
-    return 0;
-}
+
