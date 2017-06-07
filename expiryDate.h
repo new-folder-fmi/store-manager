@@ -10,6 +10,7 @@ private:
 public:
     ExpiryDate();
     ExpiryDate(int _year, int _month, int _day);
+    ExpiryDate(ExpiryDate const& other);
 
     int getYear() const;
     int getMonth() const;
@@ -18,9 +19,9 @@ public:
     void setYear(int _year);
     void setMonth(int _month);
     void setDay(int _day);
-    void setExpiryDate(ExpiryDate const& other);//any difference between const& and const in this case?
+    void setExpiryDate(ExpiryDate const& other);//
 
-    bool isExpired(ExpiryDate const& currentDate);
+    bool isValid(ExpiryDate const& currentDate);
 };
 
 #endif // EXPIRY_DATE_H

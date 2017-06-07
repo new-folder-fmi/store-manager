@@ -6,7 +6,12 @@ ExpiryDate::ExpiryDate():year(0), month(0), day(0)
 ExpiryDate::ExpiryDate(int _year, int _month, int _day):year(_year), month(_month), day(_day)
 {
 }
-
+ExpiryDate::ExpiryDate(ExpiryDate const& other)
+{
+    year = other.year;
+    month = other.month;
+    day = other.day;
+}
 int ExpiryDate::getYear() const
 {
     return year;
@@ -48,7 +53,7 @@ short compare(int number1, int number2)
         return 1;
 }
 
-bool ExpiryDate::isExpired(ExpiryDate const& currentDate)
+bool ExpiryDate::isValid(ExpiryDate const& currentDate)
 {
     switch(compare(this->year, currentDate.year))
     {
