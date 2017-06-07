@@ -1,31 +1,34 @@
 // product.h
 #ifndef PRODUCT_H
 #define PRODUCT_H
-#include <string>
-#include <vector>
+#include "expiryDate.h"
 class Product
 {
-  std::string name;
-  std::vector<Shipment> ShipmentList;
-  /*int capacity;
+    string name;
+    double price;
+    Shipment* shipmentList;
+    int capacity;
     int size;
 
     void erase();
-    void copy(Product const&);
+    void copy(Product const& other);
     void resize();
     static const int INITIAL_CAPACITY;
-    Product();
-    Product(Product const&);
-    Product& operator=(const Product&);
+    // missing ?
+    Product(Product const& other);
+    Product& operator=(const Product& other);
     ~Product();
-  */
 
-  bool isExpiryDateTheSame(Shipment, Shipment);
-  // void sumShipments(Shipment, Shipment);
+    bool isExpiryDateTheSame(Shipment s1, Shipment s2);
+    void sumShipments(Shipment s1, Shipment s2);
 
-  void removeShipmentByExpiryDate(int*);
-  //  void addShipment(Shipment const&);
-  void update();
+    void removeShipmentByExpiryDate(ExpiryDate const& _expiryDate);
+    void addShipment(Shipment const& s);
+    void update();
+
+    Product operator-(int removeAmount);
+    void removeShipment(int index);
+
 };
 
 #endif
